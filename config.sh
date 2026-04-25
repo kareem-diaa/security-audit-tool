@@ -1,0 +1,12 @@
+#!/bin/bash
+
+REPORT_DIR="./output"
+TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+TMP_DIR="${TMP_DIR:-/tmp/audit_$$}"
+
+AUTHORIZED_PORTS=(22 80 443)
+AUTHORIZED_USERS=("root")
+
+SEVERITY_HIGH="[HIGH]"
+SEVERITY_MED="[MED]"
+SEVERITY_LOW="[LOW]"
