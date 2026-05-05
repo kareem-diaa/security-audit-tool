@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -u
 source "$(dirname "$0")/../config.sh"
 
 OUTPUT="$TMP_DIR/user_findings.txt"
