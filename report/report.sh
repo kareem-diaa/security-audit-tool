@@ -86,11 +86,11 @@ echo ""
 fi
 echo "RECOMMENDATIONS"
 echo "---------------"
-echo "$ALL_FINDINGS" | grep "\[HIGH\]" || true | while read -r line; do
+echo "$ALL_FINDINGS" | grep "\[HIGH\]" | while read -r line; do
     item=$(echo "$line" | sed 's/\[HIGH\] //')
     case "$item" in
         *"Unexpected open port"*)
-            port=$(echo "$item" | grep -oP '\\d+$' || true)
+            port=$(echo "$item" | grep -oP '\d+$' || true)
             echo "  - Close port ${port:-<port>} or add to AUTHORIZED_PORTS in config.sh if intentional"
             ;;
         *"SUID binary"*)
@@ -166,12 +166,12 @@ cat <<EOF
 <h2>Recommendations</h2>
 EOF
 
-echo "$ALL_FINDINGS" | grep "\[HIGH\]" || true | while read -r line; do
+echo "$ALL_FINDINGS" | grep "\[HIGH\]" | while read -r line; do
     item=$(echo "$line" | sed 's/\[HIGH\] //')
     rec=""
     case "$item" in
         *"Unexpected open port"*)
-            port=$(echo "$item" | grep -oP '\\d+$' || true)
+            port=$(echo "$item" | grep -oP '\d+$' || true)
             rec="Close port ${port:-<port>} or whitelist it in config.sh if intentional" ;;
         *"SUID binary"*)
             bin=$(echo "$item" | awk '{print $NF}')
