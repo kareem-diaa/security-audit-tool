@@ -95,6 +95,8 @@ The tool follows a decoupled, modular architecture for scalability and maintaina
 3. **Report Aggregator (`report/report.sh`)**: Consumes the ephemeral files from `$TMP_DIR`, calculates the risk score, interfaces with the Gemini API for the executive summary, and generates final artifacts.
 4. **Data Persistence**: Final reports are stored in `output/` in both `.txt` (CLI consumption) and `.html` (visual consumption) formats.
 
+![Architecture Diagram](audit_tool_architecture.svg)
+
 ---
 
 ## 👥 Team
