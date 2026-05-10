@@ -10,6 +10,11 @@ fi
 
 source ./config.sh
 
+# Load .env variables if file exists
+if [[ -f .env ]]; then
+    export $(grep -v '^#' .env | xargs)
+fi
+
 # Ensure TMP_DIR and REPORT_DIR exist
 mkdir -p "$TMP_DIR" "$REPORT_DIR"
 
