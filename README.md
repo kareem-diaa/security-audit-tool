@@ -1,4 +1,3 @@
-
 # Automated System Audit Tool
 **CET216 – Linux and Shell Programming | Spring 2026**
 
